@@ -35,11 +35,128 @@ class ContactsArrayList {
 	               searchReturn.getIndex(i).getEmail()+" "+
 	               searchReturn.getIndex(i).getPhoneNumber()+"\n";
 		
-		//System.out.println(actual);
-		String expected="anikaHr" + " "+ "anika"+" "+"hridita"+" "+"99999"+" "+"12345"+" "+"77777"+"\n";
+		System.out.println(actual);
+		
+		String expected="anika" + " "+ "anika"+" "+"tabassum"+" "+"123456"+" "+"3333"+" "+"2222"+"\n";
 		assertEquals(expected, actual);
 		
 	}
+	
+	@Test
+	void getIndexTest2() {
+		ContactsArrayCollection searchReturn2 = contactList.getAll("Zoonder");
+		int i=12;
+		String actual="";
+		actual+=searchReturn2.getIndex(i).getBusinessName()+" "+
+	               searchReturn2.getIndex(i).getFirstName()+" "+
+	               searchReturn2.getIndex(i).getLastName()+" "+
+	               searchReturn2.getIndex(i).getStreetAddress()+" "+
+	               searchReturn2.getIndex(i).getEmail()+" "+
+	               searchReturn2.getIndex(i).getPhoneNumber()+"\n";
+		
+		System.out.println(actual);
+		
+		String expected="Zoonder" + " "+ "Germain"+" "+"Marder"+" "+"797 Derek Crossing"+" "+"gmarder1c@uol.com.br"+" "+"8163397146"+"\n";
+		assertEquals(expected, actual);
+		
+	}
+	@Test
+	void getIndexTestMin() {
+		ContactsArrayCollection searchReturn3 = contactList.getAll("Cogilith");
+		int i=0;
+		String actual="";
+		actual+=searchReturn3.getIndex(i).getBusinessName()+" "+
+	               searchReturn3.getIndex(i).getFirstName()+" "+
+	               searchReturn3.getIndex(i).getLastName()+" "+
+	               searchReturn3.getIndex(i).getStreetAddress()+" "+
+	               searchReturn3.getIndex(i).getEmail()+" "+
+	               searchReturn3.getIndex(i).getPhoneNumber()+"\n";
+		
+		System.out.println( actual);
+		
+		String expected="Cogilith" + " "+ "Sharona"+" "+"Marrion"+" "+"603 Oriole Court"+" "+"smarrionmf@gmpg.org"+" "+"5955567000"+"\n";
+		assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	void getIndexTestMinplus() {
+		ContactsArrayCollection searchReturn3 = contactList.getAll("Cogilith");
+		int i=1;
+		String actual="";
+		actual+=searchReturn3.getIndex(i).getBusinessName()+" "+
+	               searchReturn3.getIndex(i).getFirstName()+" "+
+	               searchReturn3.getIndex(i).getLastName()+" "+
+	               searchReturn3.getIndex(i).getStreetAddress()+" "+
+	               searchReturn3.getIndex(i).getEmail()+" "+
+	               searchReturn3.getIndex(i).getPhoneNumber()+"\n";
+		
+		System.out.println( actual);
+		
+		String expected="Cogilith" + " "+ "Nicolea"+" "+"Chisnall"+" "+"4014 Reinke Pass"+" "+"nchisnallln@ftc.gov"+" "+"5722219238"+"\n";
+		assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	void getIndexTestMax() {
+		ContactsArrayCollection searchReturn3 = contactList.getAll("Cogilith");
+		int i=searchReturn3.size()-1;
+		String actual="";
+		actual+=searchReturn3.getIndex(i).getBusinessName()+" "+
+	               searchReturn3.getIndex(i).getFirstName()+" "+
+	               searchReturn3.getIndex(i).getLastName()+" "+
+	               searchReturn3.getIndex(i).getStreetAddress()+" "+
+	               searchReturn3.getIndex(i).getEmail()+" "+
+	               searchReturn3.getIndex(i).getPhoneNumber()+"\n";
+		
+		System.out.println( actual);
+		
+		String expected="Cogilith" + " "+ "Maxie"+" "+"Brown"+" "+"858 Emmet Place"+" "+"mbrown1i@geocities.com"+" "+"9751159659"+"\n";
+		assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	void getIndexTestNominal() {
+		ContactsArrayCollection searchReturn3 = contactList.getAll("Cogilith");
+		int i=searchReturn3.size()/2;
+		String actual="";
+		actual+=searchReturn3.getIndex(i).getBusinessName()+" "+
+	               searchReturn3.getIndex(i).getFirstName()+" "+
+	               searchReturn3.getIndex(i).getLastName()+" "+
+	               searchReturn3.getIndex(i).getStreetAddress()+" "+
+	               searchReturn3.getIndex(i).getEmail()+" "+
+	               searchReturn3.getIndex(i).getPhoneNumber()+"\n";
+		
+		System.out.println( actual);
+		
+		String expected="Cogilith" + " "+ "Rog"+" "+"Buxam"+" "+"16 Clyde Gallagher Trail"+" "+"rbuxam21@paypal.com"+" "+"5582474808"+"\n";
+		assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	void getIndexTestMaxminus() {
+		ContactsArrayCollection searchReturn3 = contactList.getAll("Cogilith");
+		int i=searchReturn3.size()-2;
+		String actual="";
+		actual+=searchReturn3.getIndex(i).getBusinessName()+" "+
+	               searchReturn3.getIndex(i).getFirstName()+" "+
+	               searchReturn3.getIndex(i).getLastName()+" "+
+	               searchReturn3.getIndex(i).getStreetAddress()+" "+
+	               searchReturn3.getIndex(i).getEmail()+" "+
+	               searchReturn3.getIndex(i).getPhoneNumber()+"\n";
+		
+		System.out.println("max" +actual);
+		
+		String expected="Cogilith" + " "+ "Albina"+" "+"Cordery"+" "+"301 Rowland Point"+" "+"acordery1u@google.de"+" "+"5242086325"+"\n";
+		assertEquals(expected, actual);
+		
+	}
+	
+	
+	
 	@Test
 	void sortElementTest1() {
 		//int arr[]= {5,2,1,10,9,10,7,2,3,45};
@@ -147,8 +264,9 @@ class ContactsArrayList {
 		               searchReturn.getIndex(i).getPhoneNumber()+"\n";
 		     }
 		//System.out.println(actual);
-		String expected="anika" + " "+ "anika"+" "+"tabassum"+" "+"123456"+" "+"3333"+" "+"2222"+"\n"+
-				"anikaHr" + " "+ "anika"+" "+"hridita"+" "+"99999"+" "+"12345"+" "+"77777"+"\n";
+		String expected="anikaHr" + " "+ "anika"+" "+"hridita"+" "+"99999"+" "+"12345"+" "+"77777"+"\n"+
+		"anika" + " "+ "anika"+" "+"tabassum"+" "+"123456"+" "+"3333"+" "+"2222"+"\n";
+				;
 		//System.out.println(expected);
 		
 		//System.out.println(searchReturn.getIndex(0).getUniqueID());

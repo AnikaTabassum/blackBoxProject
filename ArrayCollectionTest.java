@@ -71,6 +71,21 @@ class ArrayCollectionTest {
 	}
 	
 	@Test
+	<T> void find4() {
+		int n=50;
+		ArrayCollection<T> arr= new ArrayCollection<>();
+		T target= (T) new Contacts("Livefish","Noll","Bembridge","05219 Crescent Oaks Drive","nbembridgeqm@yandex.ru","9232121119");
+		for(int i=0;i<n;i++) {
+			arr.add(target);
+		}
+		T target2=(T) new Contacts("anika", "anika","tabassum", "32 kha dhaka", "bsse0925@iit.du.ac.bd", "01955073646");
+		arr.add(target2);
+		int actual=arr.find(target2);
+		int expected=50;
+		assertEquals(expected, actual);
+	}
+	
+	@Test
 	<T> void remove() {
 
 		T target= (T) new Contacts("Livefish","Noll","Bembridge","05219 Crescent Oaks Drive","nbembridgeqm@yandex.ru","9232121119");
@@ -81,7 +96,7 @@ class ArrayCollectionTest {
 		assertEquals(expected, actual);
 	}
 	
-	@Test
+	
 	<T> void remove2() {
 
 		T target= (T) new Contacts("Livefish","Noll","Bembridge","05219 Crescent Oaks Drive","nbembridgeqm@yandex.ru","9232121119");
@@ -92,7 +107,7 @@ class ArrayCollectionTest {
 		assertEquals(expected, actual);
 	}
 
-	@Test
+	
 	<T> void contains() {
 
 		T target= (T) new Contacts("Livefish","Noll","Bembridge","05219 Crescent Oaks Drive","nbembridgeqm@yandex.ru","9232121119");
@@ -104,7 +119,7 @@ class ArrayCollectionTest {
 		assertEquals(expected, actual);
 	}
 	
-	@Test
+	
 	<T> void contains2() {
 		String streetAddress="zzz";
 		String phoneNumber="5555";
@@ -229,6 +244,19 @@ class ArrayCollectionTest {
 		ArrayCollection<T> arr= new ArrayCollection<>();
 		int actual=arr.size();
 		int expected=0;
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	<T> void size4() {
+		ArrayCollection<T> arr= new ArrayCollection<>();
+		int n=100;
+		T target= (T) new Contacts("Livefish","Noll","Bembridge","05219 Crescent Oaks Drive","nbembridgeqm@yandex.ru","9232121119");
+		for(int i=0;i<n;i++) {
+			arr.add(target);
+		}
+		int actual=arr.size();
+		int expected=100;
 		assertEquals(expected, actual);
 	}
 }

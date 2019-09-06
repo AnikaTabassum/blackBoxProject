@@ -151,9 +151,7 @@ class LinkedCollectionTest {
 		T target= (T) new Contacts("Livefish","Noll","Bembridge","05219 Crescent Oaks Drive","nbembridgeqm@yandex.ru","9232121119");
 		arr.add(target);
 		String actual=arr.toString2();
-		System.out.println(actual);
 		String expected=target.toString()+" ";
-		System.out.println(expected);
 		assertEquals(expected, actual);
 	
 	}
@@ -166,9 +164,7 @@ class LinkedCollectionTest {
 		T target2= (T) new Contacts("Anika","koii","lalal","Dhaka","abd@hgmail.com","0175921119");
 		arr.add(target2);
 		String actual=arr.toString2();
-		System.out.println(actual);
 		String expected=target2.toString()+" "+target.toString()+" ";
-		System.out.println(expected);
 		assertEquals(expected, actual);
 	
 	}
@@ -177,10 +173,7 @@ class LinkedCollectionTest {
 	<T> void toString3() {
 		LinkedCollection<T> arr= new LinkedCollection<>();
 		String actual=arr.toString2();
-		System.out.println(actual);
 		String expected="";
-		System.out.println(expected);
-		
 		assertEquals(expected, actual);
 	
 	}
@@ -190,16 +183,18 @@ class LinkedCollectionTest {
 		LinkedCollection<T> arr= new LinkedCollection<>();
 
 		T target= (T) new Contacts("Livefish","Noll","Bembridge","05219 Crescent Oaks Drive","nbembridgeqm@yandex.ru","9232121119");
+		
+		LLNode<T> newNode = new LLNode<T>(target);
 		arr.add(target);
-		System.out.println(target);
-		int actual=arr.count(target);
-		System.out.println(actual);
+	
+		int actual=arr.counting(target);
+	
 		int expected=1;
-		System.out.println(expected);
+	
 		assertEquals(expected, actual);
 	}
 	
-	
+	@Test
 	<T> void count2() {
 		LinkedCollection<T> arr= new LinkedCollection<>();
 
@@ -207,14 +202,15 @@ class LinkedCollectionTest {
 		arr.add(target);
 		T target2= (T) new Contacts("Anika","koii","lalal","Dhaka","abd@hgmail.com","0175921119");
 		arr.add(target2);
-		int actual=arr.count(target);
-		System.out.println(actual);
+		int actual=arr.counting(target);
+		
 		int expected=1;
-		System.out.println(expected);
+		
+		assertEquals(expected, actual);
 	}
 	
 	
-	
+	@Test
 	<T> void count3() {
 		LinkedCollection<T> arr= new LinkedCollection<>();
 		int n=100;
@@ -222,13 +218,14 @@ class LinkedCollectionTest {
 		for (int i=0;i<n;i++) {
 			arr.add(target);
 		}
-		int actual=arr.count(target);
-		System.out.println(actual);
+		int actual=arr.counting(target);
+		
 		int expected=n;
-		System.out.println(expected);
+		
+		assertEquals(expected, actual);
 	}
 	
-	
+	@Test
 	<T> void count4() {
 		LinkedCollection<T> arr= new LinkedCollection<>();
 		int n=52;
@@ -241,9 +238,11 @@ class LinkedCollectionTest {
 		for (int i=0;i<m;i++) {
 			arr.add(target2);
 		}
-		int actual=arr.count(target2);
-		System.out.println(actual);
+		int actual=arr.counting(target2);
+		
 		int expected=m;
-		System.out.println(expected);
+		
+		assertEquals(expected, actual);
 	}
+	
 }
